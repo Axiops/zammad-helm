@@ -9,6 +9,7 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   replicas: 1
+  serviceName: {{ template "zammad.fullname" }}
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ include "zammad.name" . }}
